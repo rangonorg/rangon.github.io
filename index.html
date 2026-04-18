@@ -1306,6 +1306,8 @@ footer{background:#0F0A06;padding:5rem 3.5rem 2.5rem}
 </div> </div> <div class="fu" style="transition-delay:.14s">
         <div class="cform">
           <div class="cform-title">Send an enrollment request</div>
+          <form action="https://formspree.io/f/xojydzda" method="POST">
+
           <div id="formContent">
             <div class="frow">
               <div class="fg"><label>Parent's name *</label><input type="text" id="pname" placeholder="Your full name"/></div>
@@ -1333,9 +1335,8 @@ footer{background:#0F0A06;padding:5rem 3.5rem 2.5rem}
               </select>
             </div>
             <div class="fg"><label>Message (optional)</label><textarea id="msg" placeholder="Any questions or special requirements..."></textarea></div>
-            <button class="fsubmit" onclick="submitForm()">Send Enrollment Request →</button>
+            <button class="fsubmit" >Send Enrollment Request →</button>
           </div>
-          <div class="fsuccess" id="fsuccess">
             <div class="fe">🎉</div>
             <h3>Message sent!</h3>
             <p>Thank you for your interest in Rangon Academy.<br>We'll contact you within 24 hours to confirm enrollment.</p>
@@ -1488,7 +1489,7 @@ function filterCourses(cat,btn){
 function toast(msg){var t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(function(){t.classList.remove("show")},3500)}
 
 // Form submit
-function submitForm(){
+{
   var pn=document.getElementById("pname").value.trim(),ph=document.getElementById("pphone").value.trim(),cn=document.getElementById("cname").value.trim(),ca=document.getElementById("cage").value.trim(),sj=document.getElementById("subj").value;
   if(!pn||!ph||!cn||!ca||!sj){toast("⚠️ Please fill in all required fields.");return;}
   document.getElementById("formContent").style.display="none";
